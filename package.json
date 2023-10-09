@@ -1,0 +1,25 @@
+{
+  "name": "otus-2023-09-qa-js-krasilnikova",
+  "version": "1.0.0",
+  "description": "Создано в рамках курса OTUS JavaScript QA Engineer",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/okras-toloka/otus-2023-09-qa-js-krasilnikova.git"
+  },
+  "keywords": [
+    "keywords"
+  ],
+  "author": "okras",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/okras-toloka/otus-2023-09-qa-js-krasilnikova/issues"
+  },
+  "homepage": "https://github.com/okras-toloka/otus-2023-09-qa-js-krasilnikova#readme",
+  "dependencies": {
+    "jest": "^29.7.0"
+  }
+}
