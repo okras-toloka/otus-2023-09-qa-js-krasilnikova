@@ -2,60 +2,67 @@
 
 function kolobok(name) {
     if (name == 'дедушка') {
-        console.log('Я от дедушки ушел')
+        return'Я от дедушки ушел'
     } else if (name == 'заяц') {
-        console.log('Я от зайца ушел')
+        return'Я от зайца ушел'
     } else if (name == 'лиса') {
-        console.log('А от лисы не ушел')
+        return'А от лисы не ушел'
     } else {
-        console.log('Я не знаю такого персонажа')
+        return'Я не знаю такого персонажа'
     }
 };
 
 function switchKolobok(name) {
     switch (name) {
         case 'дедушка': 
-            console.log('Я от дедушки ушел')
+            return'Я от дедушки ушел'
             break
         case 'заяц': 
-            console.log('Я от зайца ушел')
+            return 'Я от зайца ушел'
             break
         case 'лиса': 
-            console.log('А от лисы не ушел')
+            return 'А от лисы не ушел'
             break
         default: 
-            console.log('Я не знаю такого персонажа')
+            return'Я не знаю такого персонажа'
             break
     }       
 }
 
+let hero = 'дедушка'
 
-let name = 'дедушка'
-kolobok(name)
-switchKolobok(name)
+let response = kolobok(hero)
+let newresponser = switchKolobok(hero)
+
+console.log(`${response} + ${newresponser}`)
 console.log('-------')
 
-name = 'лиса'
-kolobok(name)
-switchKolobok(name)
+
+hero = 'лиса'
+response = kolobok(hero)
+newresponser = switchKolobok(hero)
+
+console.log(`${response} + ${newresponser}`)
 console.log('-------')
 
-name = '132'
-kolobok(name)
-switchKolobok(name)
+hero = '123'
+response = kolobok(hero)
+newresponser = switchKolobok(hero)
+
+console.log(`${response} + ${newresponser}`)
 console.log('-------')
 
 
 // Задание 2
 
 function newYear(who) {
-    console.log(`${who}! ${who}! ${who}!`)
+    return `${who}! ${who}! ${who}!`
 }
 
-let who = 'Снегурочка'
-newYear(who)
+let cheer = newYear('Снегурочка')
+console.log(cheer)
 console.log('-------')
 
-who = 'Дед Мороз'
-newYear(who)
+cheer = newYear('Дед Мороз')
+console.log(cheer)
 console.log('-------')
