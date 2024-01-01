@@ -39,15 +39,15 @@ export const user = {
     },
 
     getInfo: async function(data){
-        console.log('DATA: ' + JSON.stringify({
-            method: 'get',
-            url: config.url + 'Account/v1/User/' + data.uuid,
-            headers: {
-                'Content-Type': 'application/json',
-                'Authorization': data.token
-            },
-            data: data
-        }));
+        // console.log('DATA: ' + JSON.stringify({
+        //     method: 'get',
+        //     url: config.url + 'Account/v1/User/' + data.uuid,
+        //     headers: {
+        //         'Content-Type': 'application/json',
+        //         'Authorization': data.token
+        //     },
+        //     data: data
+        // }));
 
         return await axios ({
             method: 'get',
