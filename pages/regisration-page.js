@@ -40,8 +40,7 @@ class RegistrationPage {
     }
 
     async typeEmail() {
-        let email = this.user.email
-        await this.email.type(email)
+        await this.email.type(this.user.email)
     }
 
     async typePassword() {

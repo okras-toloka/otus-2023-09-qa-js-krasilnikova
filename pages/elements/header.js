@@ -22,12 +22,20 @@ class Header {
         await this.register.click()
     }
 
+    async goToLoginPage(){
+        await this.login.click()
+    }
+
     async visibleBarSuccess(){
         await this.barSuccess.waitFor({state: "visible"})
     }
 
     async authLoginText() {
         return await this.authLogin.textContent();
+    }
+
+    async clickLoginText() {
+        return await this.authLogin.click();
     }
 
     async clickToLogOut(){

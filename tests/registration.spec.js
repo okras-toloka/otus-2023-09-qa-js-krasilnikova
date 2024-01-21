@@ -1,18 +1,36 @@
 const { test, expect } = require('@playwright/test')
+
 const BasePage = require('../pages/base-page')
 const MainPage = require('../pages/main-page')
+const LoginPage = require('../pages/login-page');
 const RegistrationPage = require('../pages/regisration-page');
-const LoginPage = require('../pages/login-page;');
-//const { faker } = require('@faker-js/faker');
 
 
-test('Transition to registration page ', async ({ page }) => {
+test('Transition to registration page', async ({ page }) => {
     const mainPage = new MainPage(page);
     const header = (new BasePage(page)).header;
     const regisrationPage = new RegistrationPage(page);
     
     await mainPage.openMainPage(); 
     await header.goToRegistrationPage();
+
+    await expect(page).toHaveURL('/register');
+    await expect(regisrationPage.pageTitle).toContainText('Register');
+    await expect(regisrationPage.firstBlockTitle).toContainText('Your Personal Details');
+    await expect(regisrationPage.secondBlockTitle).toContainText('Your Password');
+
+});
+
+
+test('Transition to registration page from login page', async ({ page }) => {
+    const mainPage = new MainPage(page);
+    const header = (new BasePage(page)).header;
+    const loginPage = new LoginPage(page);
+    const regisrationPage = new RegistrationPage(page);
+    
+    await mainPage.openMainPage(); 
+    await header.goToLoginPage();
+    await loginPage.goToRegistrationPage();
 
     await expect(page).toHaveURL('/register');
     await expect(regisrationPage.pageTitle).toContainText('Register');

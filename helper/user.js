@@ -10,3 +10,12 @@ export const createUser = function (){
         })
     }
 }
+
+export const userForLogin = function (){
+    return { 
+        firstName: 'Bob',
+        lastName: 'Customer',
+        email: 'BobCustomer@test.test',
+        password: '123456'
+    }
+}
