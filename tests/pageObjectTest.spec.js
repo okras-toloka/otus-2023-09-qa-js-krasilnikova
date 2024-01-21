@@ -1,16 +1,14 @@
 const { test, expect } = require('@playwright/test')
+const BasePage = require('../pages/base-page')
 const MainPage = require('../pages/main-page')
-const VerticalMenu = require('../pages/elements/vertical-menu')
-const HorizontalMenu = require('../pages/elements/horizontal-menu')
 const ProductList = require('../pages/prodict-list-page')
 const ProductCard = require('../pages/product-card-page')
 const ProductItemGrid = require ('../pages/elements/product-item-grid')
 const ProductCardInfo = require ('../pages/elements/product-card-info')
-const Header = require('../pages/elements/header')
 
 test('Transition to a category (vertical menu)', async ({ page }) => {
     const mainPage = new MainPage(page);
-    const verticalMenu = new VerticalMenu(page)
+    const verticalMenu = (new BasePage(page)).verticalMenu
     const prodictList = new ProductList(page)
     
     await mainPage.openMainPage(); 
@@ -23,10 +21,10 @@ test('Transition to a category (vertical menu)', async ({ page }) => {
 
 test('Transition to a subcategory (horizontal menu)', async ({ page }) => {
     const mainPage = new MainPage(page);
-    const horizontalMenu = new HorizontalMenu(page)
+    const horizontalMenu = (new BasePage(page)).horizontalMenu
     const prodictList = new ProductList(page)
     
-    await mainPage.open(); 
+    await mainPage.openMainPage(); 
     await horizontalMenu.visibleHorizontalMenu();
     await horizontalMenu.hoverTopElement(2);
     await horizontalMenu.clickSubElement(2, 1); 
@@ -51,7 +49,7 @@ test('Transition to the card (title)', async ({ page }) => {
 test('Add to cart from card', async ({ page }) => {
     const productCard = new ProductCard(page)
     const productCardInfo = new ProductCardInfo(page)
-    const header = new Header(page)
+    const header = (new BasePage(page)).header
 
     await productCard.openProductCard('computing-and-internet');
     await productCardInfo.visibleCardInfo();
@@ -64,9 +62,8 @@ test('Add to cart from card', async ({ page }) => {
 test('Add to cart from list', async ({ page }) => {
     const productItemGrid = new ProductItemGrid(page)
     const productList = new ProductList(page)
-    const header = new Header(page)
+    const header = (new BasePage(page)).header
     
-
     await productList.openProductList('books');
     await productList.visibleProductGrid();
     await productItemGrid.clickAddToCart(1); 

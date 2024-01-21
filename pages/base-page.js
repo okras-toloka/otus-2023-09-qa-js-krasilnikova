@@ -8,8 +8,8 @@ class BasePage {
         this.page = page;
         this.header = new Header(page)
         this.verticalMenu = new VerticalMenu(page)
-        this.HorizontalMenu = new HorizontalMenu(page)
+        this.horizontalMenu = new HorizontalMenu(page)
     }
 }
 
-module .exports = BasePage;
+module.exports = BasePage;
