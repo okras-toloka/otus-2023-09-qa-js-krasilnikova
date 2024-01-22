@@ -6,7 +6,7 @@ class Header {
         this.register = page.locator('.ico-register');
         this.login = page.locator('.ico-login');
         this.logout = page.locator('.ico-logout')
-        this.cart = page.locator('.ico-cart');
+        this.cart = page.locator('.ico-cart .cart-label');
         this.cartCount = page.locator('[class="cart-qty"]')
         this.barSuccess = page.locator('#bar-notification')
         this.authLogin = page.locator('.header-links .account')
@@ -24,6 +24,10 @@ class Header {
 
     async goToLoginPage(){
         await this.login.click()
+    }
+
+    async goToCartPage(){
+        await this.cart.click()
     }
 
     async visibleBarSuccess(){
