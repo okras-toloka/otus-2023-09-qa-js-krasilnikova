@@ -7,6 +7,7 @@ const RegistrationPage = require('../pages/regisration-page');
 const MyAccountPage = require('../pages/my-account-page');
 
 
+
 test('Transition to login page', async ({ page }) => {
     const mainPage = new MainPage(page);
     const header = (new BasePage(page)).header;

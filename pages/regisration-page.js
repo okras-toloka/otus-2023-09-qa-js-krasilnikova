@@ -3,7 +3,7 @@ import { createUser } from '../helper/user';
 class RegistrationPage {
 
     constructor(page) {
-        this.user = createUser()
+        this.randomUser = createUser()
         this.page = page;
         this.pageTitle = page.locator('.page-title');
         this.firstBlockTitle = page.locator('.page-body .fieldset:nth-of-type(2) .title strong')
@@ -32,20 +32,20 @@ class RegistrationPage {
     }
 
     async typeFirstName() {
-        await this.firstName.type(this.user.firstName)
+        await this.firstName.type(this.randomUser.firstName)
     }
 
     async typeLastName() {
-        await this.lastName.type(this.user.lastName)
+        await this.lastName.type(this.randomUser.lastName)
     }
 
     async typeEmail() {
-        await this.email.type(this.user.email)
+        await this.email.type(this.randomUser.email)
     }
 
     async typePassword() {
-        await this.password.type(this.user.password)
-        await this.confirmPassword.type(this.user.password)
+        await this.password.type(this.randomUser.password)
+        await this.confirmPassword.type(this.randomUser.password)
     }
 
     async clickToContinueButton() {

@@ -11,11 +11,11 @@ class CartPage {
         this.deleteCheckbox = page.locator('.remove-from-cart [name="removefromcart"]')
         this.updateButton = page.locator('.update-cart-button')
         this.totalRow = page.locator('.product-subtotal')
+        this.termOfUseCheckbox = page.locator('#termsofservice[type]')
+        this.checkoutButton = page.locator('.checkout-button')
+        this.termOfUsePopup = page.locator('.ui-dialog')  
+        this.termOfUsePopupText = page.locator('#terms-of-service-warning-box p')
     }
-
-    // async(str){
-    //     await this.page.goto(`/${str}`)
-    // }
 
     async clickDeleteCheckbox() {
         await this.deleteCheckbox.click()
@@ -27,6 +27,14 @@ class CartPage {
 
     async changeQuantity(str) {
         await this.quantity.fill(str);
+    }
+    
+    async clickTermOfUseCheckbox() {
+        await this.termOfUseCheckbox.click();
+    }
+
+    async clickCheckoutButton() {
+        await this.checkoutButton.click();
     }
 }
 

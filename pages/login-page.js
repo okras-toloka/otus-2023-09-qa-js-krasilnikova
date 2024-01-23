@@ -1,4 +1,4 @@
-const { userForLogin } = require("../helper/user");
+const { userForLogin, createUser } = require("../helper/user");
 
 class LoginPage{
 
@@ -31,12 +31,13 @@ class LoginPage{
     }
 
     async typeRandomEmail() {
-        await this.inputEmail.type(this.user.email)
+        await this.inputEmail.type(this.randomUser.email)
     }
 
     async typeRandomPassword() {
-        await this.inputPassword.type(this.user.password)
+        await this.inputPassword.type(this.randomUser.password)
     }
+
 
 }
 

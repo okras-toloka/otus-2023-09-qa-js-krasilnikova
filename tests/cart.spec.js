@@ -7,7 +7,6 @@ const ProductCard = require('../pages/product-card-page')
 const ProductItemGrid = require ('../pages/elements/product-item-grid')
 const ProductCardInfo = require ('../pages/elements/product-card-info')
 const CartPage = require('../pages/cart-page');
-const exp = require('constants')
 
 test('Transition to the empty cart', async ({ page }) => {
     const mainPage = new MainPage(page);
