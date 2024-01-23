@@ -3,21 +3,47 @@ class Header {
     constructor(page){
         this.page = page;
         this.logo = page.locator('.header-logo a');
-        this.register = page.locator('.header-links ul:nth-child(1) li:nth-child(1) a');
-        this.login = page.locator('.header-links ul:nth-child(1) li:nth-child(2) a');
-        this.cart = page.locator('.header-links ul:nth-child(1) li:nth-child(3) a');
+        this.register = page.locator('.ico-register');
+        this.login = page.locator('.ico-login');
+        this.logout = page.locator('.ico-logout')
+        this.cart = page.locator('.ico-cart .cart-label');
         this.cartCount = page.locator('[class="cart-qty"]')
         this.barSuccess = page.locator('#bar-notification')
+        this.authLogin = page.locator('.header-links .account')
     }
 
-    async clickLogo(){
+    async clickToLogo(){
     }
 
-    async clickCart(){
+    async clickToCart(){
+    }
+
+    async goToRegistrationPage(){
+        await this.register.click()
+    }
+
+    async goToLoginPage(){
+        await this.login.click()
+    }
+
+    async goToCartPage(){
+        await this.cart.click()
     }
 
     async visibleBarSuccess(){
         await this.barSuccess.waitFor({state: "visible"})
+    }
+
+    async authLoginText() {
+        return await this.authLogin.textContent();
+    }
+
+    async clickLoginText() {
+        return await this.authLogin.click();
+    }
+
+    async clickToLogOut(){
+        await this.logout.click()
     }
 }
 
